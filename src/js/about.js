@@ -7,7 +7,7 @@ const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
 const country = urlParams.get('country')
 //API
-const countryInfoApi = `https://restcountries.com/v3.1/name/${country}`
+const countryInfoApi = `https://restcountries.com/v3.1/${country}`
 if(countryInfoApi){
     request(countryInfoApi).then((data) => {
         createCountryInfo(data[0])

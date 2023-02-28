@@ -15,7 +15,7 @@ export const createCountries = (countries) => {
         const li = document.createElement('li')
         li.classList.add('cards__item')
         li.innerHTML = `
-        <a href="./about.html?country=${commonName}">
+        <a href="./about.html?country=/name/${commonName}">
             <img src=${flags} alt="germany-flag" width="267" height="160">
             <div class="cards__item-inner">
                 <h3 class="cards__title">${commonName}</h3>
@@ -89,7 +89,7 @@ export const createCountryInfo = (country) => {
       <h3>Border Countries:</h3>
       ${borders ? borders.map((border) => {
         return `
-        <a href="./about.html?country=${border}">${border}</a>
+        <a href="./about.html?country=/alpha/${border}">${border}</a>
         `
       }) :'No borders'}
     </div>

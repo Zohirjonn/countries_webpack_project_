@@ -5,7 +5,7 @@ const path = require('path')
 
 module.exports = {
     //mode 
-    mode: 'development', //'production'
+    mode: 'production', //'development'
     //entry
     entry: {
         main: path.resolve(__dirname, 'src/js/main.js'),
@@ -22,7 +22,7 @@ module.exports = {
         static:{
             directory: path.resolve(__dirname, 'public')
         },
-        port:3003,
+        port:3001,
         open: true,
         hot: true,
         compress: true,
@@ -34,7 +34,17 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
-            }
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
+              },
         ]
     },
     //plugins
