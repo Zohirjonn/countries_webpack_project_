@@ -359,14 +359,22 @@ body {
 }
 
 .cards__item {
-    box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.6),
-    inset 0px 0px 90px 1px rgba(137, 131, 131, 0.6) !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6),
+        inset 0px 0px 90px 1px rgba(137, 131, 131, 0.6) !important;
     border-radius: 5px;
     overflow: hidden;
     background-color: var(--white-bg-color);
     transition: all 0.3s ease;
     /* box-shadow:inset 0px 0px 90px 1px rgba(0, 0, 0, 0.6) !important; */
-    z-index: 1;
+}
+
+.cards__item:hover {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.cards__item:hover img {
+    transform: rotate(360deg) !important;
 }
 
 .cards__item-inner {
@@ -418,6 +426,10 @@ body {
 /* ABOUT MAIN STYLES */
 .back-button-wrapper {
     margin: 5rem 0;
+}
+
+.back-button-wrapper:hover{
+    cursor: pointer;
 }
 
 .back-button {
